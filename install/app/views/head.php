@@ -11,8 +11,8 @@
 <body>
 <div id="container">
 	<div id="container">
-		<div class="text-center">
+		<center>
 			<img src="<?=site_url('install/assets/img/opensid_logo.png');?>" width="20%" alt="Instalasi OpenSID" class="img-responsive" />
 			<h4>OpenSID <?=build_version();?></h4>
-		</div>
+		</center>
 		<hr>
