@@ -103,7 +103,7 @@ class Install extends CI_Controller
 
 				// Insert User
 				$this->install_model->insert_user(array(
-					'id'        => 2,
+					'id'        => NULL,
 					'username'  => $_POST['user'],
 					'password'  => $pwHash,
 					'id_grup'	=> 1,

@@ -1,0 +1,4 @@
+Lengkapnya, isi rilis versi 20.03-pasca adalah sebagai berikut:
+1. Support Default Value "NULL"
+2. Perbaikan Tampilan Logo menjadi Center
+3. 
