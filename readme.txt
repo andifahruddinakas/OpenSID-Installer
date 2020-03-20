@@ -7,8 +7,7 @@
 - Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer/releases)
 
 ## Database
-- Gunakan database hasil export
-- Database yang digunakan adalah database hasil export contoh_data_awal_20200301a dengan perubahan yakni pengosongan data awal.
+- Database yang digunakan adalah database opensid versi 20.30-pasca (contoh_data_awal_20200301a) dengan perubahan yakni pengosongan data awal.
 - Jika ingin menggunakan database lain silahkan hapus /timpa database default yang ada pada folder : intall/assets/sql kemudian ganti dengan database yang anda inginkan (jangan lupa ganti nama database tersebut menjadi "opensid.sql")
 
 ## Cara Penggunaan
