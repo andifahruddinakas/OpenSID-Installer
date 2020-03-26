@@ -8,9 +8,10 @@ class Install extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		ini_set('max_execution_time', 0); 
+		ini_set('memory_limit', '-1'); 
 		date_default_timezone_set('Asia/Jakarta');
 		$this->CI = &get_instance();
-
 		$this->key = md5(date('dmYhis') . random_string(16));
 		$this->encryption->initialize(array(
 			'key' => hex2bin($this->key)
