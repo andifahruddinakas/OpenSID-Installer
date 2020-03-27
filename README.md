@@ -1,26 +1,32 @@
 # OpenSID Installer
 
 ## Persiapan
-- Buka dan edit php.ini, ganti "max_execution_time=30" jadi "max_execution_time=0" dan restart xampp
-- Jalankan xampp (Aphace dan MySQL)
-- Siapkan OpenSID (https://github.com/OpenSID/OpenSID/releases)
-- Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer/releases)
+- Siapkan OpenSID (https://github.com/OpenSID/OpenSID)
+- Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer)
 
 ## Database
-- Gunakan database hasil export
-- Database yang digunakan adalah database hasil export contoh_data_awal_20200301a dengan perubahan yakni pengosongan data awal.
-- Jika ingin menggunakan database lain silahkan hapus /timpa database default yang ada pada folder : intall/assets/sql kemudian ganti dengan database yang anda inginkan (jangan lupa ganti nama database tersebut menjadi "opensid.sql")
+Database yang digunakan :
+1. Database Kosong (database hasil export contoh_data_awal_20200301a dengan pengosongan data awal melalui system opensid).
+2. Database contoh data awal yg diikut sertakan pada setiap rilis dengan perubahan struktur hasil export phpmyadmin (agar menyesuaikan dengan instller).
+
+Menggunakan database lain :
+1. Siapkan database yang akan digunakan (database merupakan hasil export dari phpmyadmin).
+2. Ganti nama file database menjadi "opensid.sql".
+3. Salin file database ke dalam folder "intall/assets/sql" (Jika muncul peringatan timpa file, silahkan setujui).
 
 ## Cara Penggunaan
-- Extract OpenSID
-- Extract Intaller-OpenSID (Jika ada file yg sama silahkan tipa)
-- Buat database kosong (misal : opensid)
-- Buka website anda (contoh http://localhost/opensid/)
-- Ikuti arahan yang ada di form, lakukan input data jika dibutuhkan
-- Login dan lakukan migrasi database
+1. Extract OpenSID pada folder :
+- localhost : folder project (../htdoc/nama_project)
+- hosting : public_html
+2. Extract Intaller-OpenSID (Jika muncul peringatan timpa file, silahkan setujui).
+3. Buat database.
+4. Buka website anda (contoh http://localhost/opensid/).
+5. Ikuti arahan yang ada di form instalasi, lakukan input data jika dibutuhkan.
+6. Setelah proses instalasi selesai, anda akan di arahkan ke halaman login admin. Silahkan login dan lakukan migrasi database (pengaturan>database>migrasi).
 
 
 ## Catatan
-- Gunakan database yg baru / kosong (tidak ada tabel)
-- Pada proses menghubungkan ke database akan sedikit lama tergantung database/data awal yang anda gunakan
-- Setelah proses instalasi selesai anda akan di alihkan ke halaman login (siteman) website anda dan folder/file yang berhubungan dengan instalasi akan otomatis terhapus
+- Gunakan database yg baru/kosong (tidak ada tabel).
+- Proses menghubungkan ke database include dengan porses import database, sehingga proses akan memakan waktu agak lama tergantung database yg digunakan dan kecepatan hsoting anda.
+- Semua proses yg dibutuhkan opensid (sperti pembuatan folder desa) sudah include pada installer.
+- Setelah proses instalasi selesai semua file.folder yang berhubungan dengan instalasi akan otomatis terhapus.
