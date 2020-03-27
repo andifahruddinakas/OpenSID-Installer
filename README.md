@@ -16,9 +16,9 @@ Menggunakan database lain :
 
 ## Cara Penggunaan
 1. Extract OpenSID pada folder :
-- localhost : folder project (../htdoc/nama_project)
-- hosting : public_html
-2. Extract Intaller-OpenSID (Jika muncul peringatan timpa file, silahkan setujui).
+   - localhost : folder project (../htdoc/nama_project)
+   - hosting : public_html
+2. Extract OpenSID-Intaller (Jika muncul peringatan timpa file, silahkan setujui).
 3. Buat database.
 4. Buka website anda (contoh http://localhost/opensid/).
 5. Ikuti arahan yang ada di form instalasi, lakukan input data jika dibutuhkan.
