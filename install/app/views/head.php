@@ -1,18 +1,30 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>OpenSID Installation</title>
-    <link rel="stylesheet" type="text/css" href="<?=site_url('install/assets/css/bootstrap.css');?>"/>
-    <link rel="stylesheet" type="text/css" href="<?=site_url('install/assets/css/style.css');?>"/>
-    <link rel="shortcut icon" href="<?=site_url('install/assets/img/favicon.ico');?>" />
-</head>
-<body>
-<div id="container">
-	<div id="container">
-		<center>
-			<img src="<?=site_url('install/assets/img/opensid_logo.png');?>" width="20%" alt="Instalasi OpenSID" class="img-responsive" />
-			<h4>OpenSID <?=build_version();?></h4>
-		</center>
-		<hr>
+    <meta charset="UTF-8">
+    <title><?= ucwords($judul)?> | Instalasi OpenSID</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="<?= base_url()?>favicon.ico" />
+	<!-- Bootstrap 3.3.7 -->
+	<link rel="stylesheet" href="<?= base_url()?>assets/bootstrap/css/bootstrap.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="<?= base_url()?>assets/bootstrap/css/font-awesome.min.css">
+	<!-- Ionicons -->
+	<link rel="stylesheet" href="<?= base_url()?>assets/bootstrap/css/ionicons.min.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="<?= base_url()?>assets/css/AdminLTE.min.css">
+	</head>
+		<body class="hold-transition login-page">
+			<div class="login-box">
+				<div class="login-box-body">
+				<center>
+					<img src="<?=base_url('assets/files/logo/opensid_logo.png');?>" width="30%" alt="Instalasi OpenSID" class="img-responsive" />
+					</p>OpenSID <?=build_version();?></p>
+				<hr>
+				<b><?= strtoupper($judul); ?></b>
+				<br><br>
+				</center>
+				<form method="post">

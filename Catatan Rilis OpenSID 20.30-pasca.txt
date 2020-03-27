@@ -1,0 +1,8 @@
+Lengkapnya, isi rilis opensid-installer versi 20.03-pasca adalah sebagai berikut:
+1. Support Default Value "NULL"
+2. Perbaikan Tampilan Logo menjadi Center
+3. Penyesuaian assets menggunakan bawaan opensid
+4. Gunakan session menggati tag input hidden
+5. Sederhanakan view
+6. Penyesuaian input data profil desa
+7. Set default port 3606
