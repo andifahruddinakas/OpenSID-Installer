@@ -17,7 +17,7 @@ class Install extends MY_Controller
 			// Mulai atau koneksi ke database gagal
 			if ($_POST['act'] === 'ke_basisdata') {
 				$data = array('judul' => 'pengaturan basisdata', 'tujuan' => 'ke_desa', 'aksi' => 'Lanjutkan');
-				$this->load->render_view('set_database', $data);
+				$this->render_view('set_database', $data);
 			}
 
 			// langkah 1 Pengaturan Database
@@ -32,18 +32,18 @@ class Install extends MY_Controller
 
 				if (!$db_obj->conn_id) {
 					$data = array('judul' => 'gagal koneksi basisdata', 'tujuan' => 'ke_basisdata', 'aksi' => 'Coba lagi');
-					$this->load->render_view('disconnect', $data);
+					$this->render_view('disconnect', $data);
 				} else {
 					$this->load->database();
 					
 					if ($this->install_model->import_tables(FCPATH . "install/sql/opensid.sql") == TRUE) {
 						$this->db->close(); // close connection
 						$data = array('judul' => 'pengaturan profil desa', 'tujuan' => 'ke_pengguna', 'aksi' => 'Selesai');
-						$this->load->render_view('set_data_desa', $data);
+						$this->render_view('set_data_desa', $data);
 						
 					} else {
 						$data = array('judul' => 'pengaturan basisdata', 'tujuan' => 'ke_desa', 'aksi' => 'hubungkan basisdata');
-						$this->load->render_view('set_database', $data);
+						$this->render_view('set_database', $data);
 					}
 				}				
 			}
@@ -55,7 +55,7 @@ class Install extends MY_Controller
 
 				if (!$db_obj->conn_id) {
 					$data = array('judul' => 'gagal koneksi basisdata', 'tujuan' => 'ke_basisdata', 'aksi' => 'Coba lagi');
-					$this->load->render_view('disconnect', $data);
+					$this->render_view('disconnect', $data);
 				} else {
 					$this->load->database();
 					$this->db->reconnect();
@@ -79,7 +79,7 @@ class Install extends MY_Controller
 					));
 					$this->db->close(); // close connection
 					$data = array('judul' => 'pengaturan pengguna', 'tujuan' => 'ke_login', 'aksi' => 'Selesasi');
-					$this->load->render_view('set_user', $data);
+					$this->render_view('set_user', $data);
 				}
 			}
 
@@ -90,7 +90,7 @@ class Install extends MY_Controller
 
 				if (!$db_obj->conn_id) {
 					$data = array('judul' => 'gagal koneksi basisdata', 'tujuan' => 'ke_basisdata', 'aksi' => 'Coba lagi');
-					$this->load->render_view('disconnect', $data);
+					$this->render_view('disconnect', $data);
 				} else {
 					$this->load->database();
 					$this->db->reconnect();
@@ -150,7 +150,7 @@ class Install extends MY_Controller
 			}
 		} else {
 			$data = array('judul' => 'selamat datang', 'tujuan' => 'ke_basisdata', 'aksi' => 'Mulai');
-			$this->load->render_view('welcome', $data);
+			$this->render_view('welcome', $data);
 		}
 	}
 
