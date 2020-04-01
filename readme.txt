@@ -12,7 +12,7 @@ Database yang digunakan :
 Menggunakan database lain :
 1. Siapkan database yang akan digunakan (database merupakan hasil export dari phpmyadmin).
 2. Ganti nama file database menjadi "opensid.sql".
-3. Salin file database ke dalam folder "intall/assets/sql" (Jika muncul peringatan timpa file, silahkan setujui).
+3. Salin file database ke dalam folder "intall/sql" (Jika muncul peringatan timpa file, silahkan setujui).
 
 ## Cara Penggunaan
 1. Extract OpenSID pada folder :
@@ -30,3 +30,6 @@ Menggunakan database lain :
 - Proses menghubungkan ke database include dengan porses import database, sehingga proses akan memakan waktu agak lama tergantung database yg digunakan dan kecepatan hsoting anda.
 - Semua proses yg dibutuhkan opensid (sperti pembuatan folder desa) sudah include pada installer.
 - Setelah proses instalasi selesai semua file.folder yang berhubungan dengan instalasi akan otomatis terhapus.
+
+## Epilog
+Jika repository ini dirasa bermanfaat, mohon kesediaannya memberi bintang ⭐
