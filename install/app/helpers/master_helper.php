@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-function build_version($ver = '20.03-pasca')
+function build_version($ver = '20.04')
 {
 	return $ver;
 }
