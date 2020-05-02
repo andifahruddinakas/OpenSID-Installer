@@ -5,9 +5,7 @@
 - Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer)
 
 ## Database
-Database yang digunakan :
-1. Database Kosong (database hasil export contoh_data_awal_20200301a dengan pengosongan data awal melalui system opensid).
-2. Database contoh data awal yg diikut sertakan pada setiap rilis dengan perubahan struktur hasil export phpmyadmin (agar menyesuaikan dengan instller).
+Database yang digunakan adalah contoh_data_awal_20200501.sql yang berupa contoh data awal yg diikutkan pada setiap rilis. Adapun perubahan yang dilakukan adalah perubahan struktur database yang diambil dari hasil export phpmyadmin (agar menyesuaikan dengan instller).
 
 Menggunakan database lain :
 1. Siapkan database yang akan digunakan (database merupakan hasil export dari phpmyadmin).
@@ -15,19 +13,19 @@ Menggunakan database lain :
 3. Salin file database ke dalam folder "intall/sql" (Jika muncul peringatan timpa file, silahkan setujui).
 
 ## Cara Penggunaan
-1. Extract OpenSID pada folder :
+1. Extract OpenSID dan OpenSID-Intaller pada folder (Jika muncul peringatan timpa file, silahkan setujui):
    - localhost : folder project (../htdoc/nama_project)
-   - hosting : public_html
-2. Extract OpenSID-Intaller (Jika muncul peringatan timpa file, silahkan setujui).
-3. Buat database.
-4. Buka website anda (contoh http://localhost/opensid/).
-5. Ikuti arahan yang ada di form instalasi, lakukan input data jika dibutuhkan.
-6. Setelah proses instalasi selesai, anda akan di arahkan ke halaman login admin. Silahkan login dan lakukan migrasi database (pengaturan>database>migrasi).
+   - hosting : public_html / wwww
+2. Buat database baru.
+3. Buka website anda (contoh http://localhost/opensid/).
+4. Ikuti arahan yang ada di form instalasi, lakukan input data jika dibutuhkan.
+5. Setelah proses instalasi selesai, anda akan di arahkan ke halaman login admin.
 
 
 ## Catatan
-- Gunakan database yg baru/kosong (tidak ada tabel).
-- Proses menghubungkan ke database include dengan porses import database, sehingga proses akan memakan waktu agak lama tergantung database yg digunakan dan kecepatan hsoting anda.
+- Gunakan database yg baru/kosong (tidak ada maupun tabel).
+- Centang 'kosongkan dataawal' pada proses import jika ingin menggunakan data kosong.
+- Proses import database akan memakan waktu beberapa menit tergantung database dan hsoting yg anda digunakan.
 - Semua proses yg dibutuhkan opensid (sperti pembuatan folder desa) sudah include pada installer.
 - Setelah proses instalasi selesai semua file.folder yang berhubungan dengan instalasi akan otomatis terhapus.
 

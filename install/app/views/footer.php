@@ -1,9 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-			<hr>
-			<div class="form-group">
-				<input type="hidden" name="act" value="<?= $tujuan?>">
-				<button type="submit" class="btn btn-primary btn-block btn-flat"><?= $aksi?></button>
-			</div>
+				<hr>	
+				<div class="form-group">
+					<input type="hidden" name="act" value="<?= $tujuan?>">
+					<button type="submit" class="btn btn-primary btn-block btn-flat"><?= $aksi?></button>
+				</div>
 			</form>
 		</div>		
 	</div>

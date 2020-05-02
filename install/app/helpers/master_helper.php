@@ -1,11 +1,10 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-function build_version($ver = '20.04')
-{
-	return $ver;
-}
+// Hapus fungsi ini jika installer sudah digabungkan dengan opensid
+define("VERSION", '20.05');
 
+// Hapus fungsi ini jika installer sudah digabungkan dengan opensid
 function xcopy($src, $dest)
 {
 	foreach (scandir($src) as $file) {
@@ -82,41 +81,41 @@ function cdb($conf)
 	$db_port = $conf['db_port'];
 
 	$date = date('d-M-Y h:i:s');
-	$build_version = build_version();
+	$build_version = VERSION;
 
 	$content = <<<EOS
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-// -------------------------------------------------------------------------
-// Konfigurasi database dalam file ini menggantikan konfigurasi di file asli
-// SID di donjo-app/config/database.php.
-//
-// Letakkan username, password dan database sebetulnya di file ini.
-// File ini JANGAN di-commit ke GIT. TAMBAHKAN di .gitignore
-// -------------------------------------------------------------------------
+/* -------------------------------------------------------------------------
+|  Konfigurasi database dalam file ini menggantikan konfigurasi di file asli
+|  SID di donjo-app/config/database.php.
+|  
+|  Letakkan username, password dan database sebetulnya di file ini.
+|  File ini JANGAN di-commit ke GIT. TAMBAHKAN di .gitignore
+|  -------------------------------------------------------------------------
 
-// Data Konfigurasi MySQL yang disesuaikan
+|  Data Konfigurasi MySQL yang disesuaikan
+*/
 
 \$db['default']['hostname'] = '{$db_host}';
 \$db['default']['username'] = '{$db_user}';
 \$db['default']['password'] = '{$db_pass}';
 \$db['default']['database'] = '{$db_name}';
+
+/*
+| Untuk setting koneksi database 'Strict Mode'
+| Sesuaikan dengan ketentuan hosting
+*/ 
+\$db['default']['stricton'] = TRUE;
 EOS;
 	return $content;
 }
 
 //folder : desa/config/config.php
-function cfile($data)
+function cfile()
 {
-	$site_url = $data['site_url'];
-	$en_key   = $data['key'];
-	$db_host  = $data['db_host'];
-	$db_name  = $data['db_name'];
-	$db_user  = $data['db_user'];
-	$db_pass  = $data['db_pass'];
-
 	$date = date('d-M-Y h:i:s');
-	$build_version = build_version();
+	$build_version = VERSION;
 	$content = <<<EOS
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 // ----------------------------------------------------------------------------
@@ -140,6 +139,14 @@ function cfile($data)
 // dapat membuat artikel berisi video yang aktif ditampilkan di Web.
 // Misalnya, ganti dengan id = 1 jika ingin membuat pengguna admin sebagai pengguna terpecaya.
 	\$config['user_admin'] = 1;
+/*
+	Setting untuk tampilkan data Covid-19. Untuk menyembunyikan ganti menjadi nilai 0;
+	Untuk menampilkan data provinsi, gunakan setting 'provinsi_covid'.
+	Kode provinsi sesuai dengan yg di http://pusatkrisis.kemkes.go.id/daftar-kode-provinsi
+*/
+	\$config['covid_data'] = 1;
+	\$config['provinsi_covid'] = 51; // kode provinsi. Comment baris ini untuk menampilkan data Indonesia
+	\$config['covid_desa'] = 1; // Tampilkan status COVID-19 dari data OpenSID desa
 EOS;
 	return $content;
 }
@@ -147,8 +154,8 @@ EOS;
 // index.php
 function cindex()
 {
-	$date = date('Y');
-	$build_version = build_version();
+	$date = date('d-M-Y h:i:s');
+	$build_version = VERSION;
 	$content = <<<EOS
 <?php
 /**
@@ -536,3 +543,42 @@ Komunitas SID juga bebas, bahkan diajak, untuk turut membuat kontribusi pada pan
 ';
 	return $license;
 }
+
+//folder : .htaccess
+function htaccess()
+{
+	$content = <<<EOS
+#============
+# Untuk menghapus index.php dari url OpenSID, ubah nama file ini menjadi .htaccess,
+# sehingga misalnya, modul Web bisa dipanggil dengan http://localhost/first.
+# Untuk menggunakan fitur ini, pastikan konfigurasi apache di server SID
+# mengizinkan penggunaan .htaccess
+#============
+RewriteEngine on
+RewriteBase /
+# Apabila menggunakan sub-domain atau sub-folder gunakan bentuk berikut
+# RewriteBase /nama-sub-folder/
+
+# Prevent index dirs
+RewriteCond $1 
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# General dirs / files
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# Protec Folder Not Index
+Options All -Indexes
+EOS;
+	return $content;
+}
+
+function input($val)
+{
+	$CI =& get_instance();
+
+	return $CI->input->post($val);
+}
+

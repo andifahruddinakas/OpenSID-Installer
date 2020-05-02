@@ -18,13 +18,12 @@
 	<link rel="stylesheet" href="<?= base_url()?>assets/css/AdminLTE.min.css">
 	</head>
 		<body class="hold-transition login-page">
-			<div class="login-box">
-				<div class="login-box-body">
-				<center>
-					<img src="<?=base_url('assets/files/logo/opensid_logo.png');?>" width="30%" alt="Instalasi OpenSID" class="img-responsive" />
-					</p>OpenSID <?=build_version();?></p>
+		<div class="login-box">
+			<div class="login-box-body">
+			<center>
+				<img src="<?=base_url('assets/files/logo/opensid_logo.png');?>" width="30%" alt="Instalasi OpenSID" class="img-responsive"/>
+				<br><b>OpenSID <?=VERSION?></b>
 				<hr>
-				<b><?= strtoupper($judul); ?></b>
-				<br><br>
-				</center>
-				<form method="post">
+				<b><?= strtoupper($judul); ?></b><br><br>
+			</center>
+			<form method="post">

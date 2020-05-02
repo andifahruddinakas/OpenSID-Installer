@@ -4,6 +4,6 @@
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
 				<div class="form-group has-feedback">
-                    <input type="password" name="pass" class="form-control" placeholder="Sandi" maxlength="20" minlength="6" required/>
+					<input type="password" name="pass" class="form-control" placeholder="Sandi" maxlength="20" minlength="6" required/>
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                 </div>
