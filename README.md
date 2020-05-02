@@ -1,5 +1,8 @@
 # OpenSID Installer
 
+![welcome](https://user-images.githubusercontent.com/57283157/80867836-8028fa00-8cc0-11ea-986c-142f153f02da.PNG)
+
+
 ## Persiapan
 - Siapkan OpenSID (https://github.com/OpenSID/OpenSID)
 - Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer)
