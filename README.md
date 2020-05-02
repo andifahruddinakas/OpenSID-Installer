@@ -2,7 +2,6 @@
 
 ![welcome](https://user-images.githubusercontent.com/57283157/80867836-8028fa00-8cc0-11ea-986c-142f153f02da.PNG)
 
-
 ## Persiapan
 - Siapkan OpenSID (https://github.com/OpenSID/OpenSID)
 - Siapkan OpenSID-Installer (https://github.com/afa28/OpenSID-Installer)
@@ -26,7 +25,7 @@ Menggunakan database lain :
 
 
 ## Catatan
-- Gunakan database yg baru/kosong (tidak ada maupun tabel).
+- Gunakan database yg baru/kosong (tidak ada data maupun tabel).
 - Centang 'kosongkan dataawal' pada proses import jika ingin menggunakan data kosong.
 - Proses import database akan memakan waktu beberapa menit tergantung database dan hsoting yg anda digunakan.
 - Semua proses yg dibutuhkan opensid (sperti pembuatan folder desa) sudah include pada installer.

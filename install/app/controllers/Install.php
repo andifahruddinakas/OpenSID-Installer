@@ -27,7 +27,6 @@ class Install extends MY_Controller
 						);
 				$this->render_view('set_database', $data);
 
-				
 				break;
 
 			case 'ke_impor': // Langkah 3 / Pengaturan Impor
